@@ -13,3 +13,6 @@ View - Solutions Explorer - Rename Form
 
 Label - autosize = false
 Checkbox - checked = true
+
+#Kodutöö
+1. Lugeda teooria
