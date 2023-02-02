@@ -14,5 +14,6 @@ View - Solutions Explorer - Rename Form
 Label - autosize = false
 Checkbox - checked = true
 
-#Kodutöö
-1. Lugeda teooria
+## Kodutöö 1
+1. Lugeda teooria 1-3 osa
+2. Vormistada sama programm (lk 32)
