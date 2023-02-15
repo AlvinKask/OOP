@@ -1,6 +1,6 @@
 # OOP
 
-[AK_Projekt1_KTA22E.zip](https://github.com/AlvinKask/OOP/files/10746602/AK_Projekt1_KTA22E.zip)
+[AK_esimene_projekt.zip](https://github.com/AlvinKask/OOP/files/10746697/AK_esimene_projekt.zip)
 
 
 02.02.2023 tunnis tehtud sodi
