@@ -8,6 +8,9 @@
 02.02.2023 tunnis tehtud sodi
 [02.02.2023.zip](https://github.com/AlvinKask/OOP/files/10567249/02.02.2023.zip)
 
+[16.02.2023.zip](https://github.com/AlvinKask/OOP/files/10754401/16.02.2023.zip)
+
+
 
 
 - [OOP_raamat.pdf](https://github.com/AlvinKask/OOP/files/10565809/OOP_raamat.pdf)
