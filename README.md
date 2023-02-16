@@ -1,5 +1,7 @@
 # OOP
 
+\\tptlive\avalik\B307\AN_B307
+
 [AK_esimene_projekt.zip](https://github.com/AlvinKask/OOP/files/10746697/AK_esimene_projekt.zip)
 
 
