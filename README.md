@@ -108,9 +108,13 @@ namespace AK_WindowsFormsApp1
         {
             string t = e.Button.ToString();     // Loeb sisse, mis nupp on vajutatud
             if (t != "Left") return;            // Kui ei vajuta vasakut, siis läheb välja
-            Point pp= AK_Koordinaadid(e.X, e.Y);
-            x1 = pp.X;
-            y1 = pp.Y;
+            if (pic != null)
+            {
+                Point pp = AK_Koordinaadid(e.X, e.Y);
+                x1 = pp.X;
+                y1 = pp.Y;
+            }
+            else return;
             AK_groupBox1.Text = x1.ToString() + " " + y1.ToString();
         }
 
@@ -118,9 +122,13 @@ namespace AK_WindowsFormsApp1
         {
             string t = e.Button.ToString();     // Loeb sisse, mis nupp on vajutatud
             if (t != "Left") return;            // Kui ei vajuta vasakut, siis läheb välja
-            Point pp = AK_Koordinaadid(e.X, e.Y);
-            x2 = pp.X;
-            y2 = pp.Y;
+            if (pic != null)
+            {
+                Point pp = AK_Koordinaadid(e.X, e.Y);
+                x2 = pp.X;
+                y2 = pp.Y;
+            }
+            else return;
             AK_groupBox1.Text = x2.ToString() + " " + y2.ToString();
             AK_Draw_Rectangle(Color.Red, 3);
         }
@@ -133,9 +141,18 @@ namespace AK_WindowsFormsApp1
             int x0 = Math.Min(x1, x2);
             int y0 = Math.Min(y1, y2);
             int dx = Math.Abs(x1 - x2);
-            int yx = Math.Abs(y1 - y2);
-            gr.DrawRectangle(pencil, x0, y0, dx, yx);
+            int dy = Math.Abs(y1 - y2);
+            gr.DrawRectangle(pencil, x0, y0, dx, dy);
             AK_pic1.Image = bm;
+
+            if (dx < 1 || dy < 1) return;
+
+            Bitmap area = new Bitmap(dx, dy);
+            Graphics g = Graphics.FromImage(area);
+            Rectangle in_rect = new Rectangle(x0, y0, dx, dy);
+            Rectangle out_rect = new Rectangle(0, 0, dx, dy);
+            g.DrawImage(pic, out_rect, in_rect, GraphicsUnit.Pixel);
+            AK_pic2.Image = area;
         }
 
         private Point AK_Koordinaadid(int x, int y)
@@ -179,6 +196,10 @@ namespace AK_WindowsFormsApp1
                 p.X = (int)((x - dx) * kx);
                 p.Y = (int)((y - dy) * ky);
             }
+            if (p.X < 0) p.X = 0;
+            if (p.X > pic.Width) p.X = pic.Width;
+            if (p.Y < 0) p.Y = 0;
+            if (p.Y > pic.Height) p.Y = pic.Height;
             return p;
         }
 
