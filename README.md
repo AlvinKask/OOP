@@ -69,6 +69,19 @@ namespace AK_WindowsFormsApp1
             // AK_groupBox1.Text = failinimi;
             AK_pic1.Image = Image.FromFile(failinimi);
             pic = Image.FromFile(failinimi);
+            AK_saveas.Enabled = true;
+        }
+
+        private void AK_saveas_Click(object sender, EventArgs e)
+        {
+            AK_saveFileDialog1.Filter = "JPG failid|*.jpg";
+            AK_saveFileDialog1.FileName = "";
+            AK_saveFileDialog1.ShowDialog();
+            failinimi = AK_saveFileDialog1.FileName;
+            if (failinimi == "") return;
+            if (AK_pic2.Image == null) return;
+            Bitmap b = new Bitmap(AK_pic2.Image);
+            b.Save(failinimi, System.Drawing.Imaging.ImageFormat.Jpeg);
         }
 
         private void AK_radioButton1_CheckedChanged(object sender, EventArgs e)
