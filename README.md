@@ -162,7 +162,22 @@ namespace AK_WindowsFormsApp1
             }
             if (AK_radioButton5.Checked)
             {
-
+                float kx = (float)pic.Width / AK_pic1.Width;
+                float ky = (float)pic.Height / AK_pic1.Height;
+                int dx = 0;
+                int dy = 0;
+                if (kx>ky)
+                {
+                    ky = kx;
+                    dy = (int)(AK_pic1.Height - pic.Height/ky) / 2;
+                }
+                else
+                {
+                    kx = ky;
+                    dx = (int)(AK_pic1.Width - pic.Width/kx) / 2;
+                }
+                p.X = (int)((x - dx) * kx);
+                p.Y = (int)((y - dy) * ky);
             }
             return p;
         }
@@ -170,4 +185,5 @@ namespace AK_WindowsFormsApp1
 
     }
 }
+
 ```
